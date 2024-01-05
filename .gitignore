@@ -1,3 +1,10 @@
+# ------------------------------------------------
+# custom
+.env
+
+# ------------------------------------------------
+# auto-generated as python form
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
