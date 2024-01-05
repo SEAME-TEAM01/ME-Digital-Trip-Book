@@ -1,0 +1,1 @@
+This directory is from CARLA's offical directory. You can check at this [page](https://github.com/carla-simulator/carla/tree/0.9.15/PythonAPI). (It has little difference from this dir, because our one is from 'release version'.)
