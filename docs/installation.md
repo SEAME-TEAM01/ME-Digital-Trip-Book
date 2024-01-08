@@ -226,3 +226,38 @@ Don't forget to put this to your rc file. `ex: zshrc`
 ```shell
 ros-init # custom alias command
 ```
+
+4. Examples
+```shell
+ros2 launch carla_ros_bridge carla_ros_bridge.launch.py
+ros2 launch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch.py
+```
+
+- If your ros2 cannot find the packages, try to run `/opt/ros/$VERSION/setup.zsh`. `~/ros2_foxy/install/local_setup.zsh`, and `~/carla_ros_bridge/install/setup.zsh`. I recommend you to set these in `~/.zshrc` to automate. Here is my zshrc file. (Just as an example)
+```shell
+# ...
+
+# CARLA Custom command and vars
+alias  dev=~/dev
+export CARLA=~/dev/CarlaUE4
+export ROS_VERSION=foxy
+export ROS2=~/ros2_$ROS_VERSION
+alias  carla="$CARLA/CarlaUE4.sh"
+alias  pip3="~/.local/bin/pip3.11"
+alias  pip="~/.local/bin/pip3.11"
+alias  ros-init-local="source $ROS2/install/local_setup.zsh"
+alias  ros-init-opt="source /opt/ros/$ROS_VERSION/setup.zsh"
+alias  ros-init-bridge="source ~/carla_ros_bridge/install/setup.zsh"
+
+# CARLA error solve
+export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/nvidia_icd.json"
+
+# CARLA ROS BRIDGE
+export CARLA_ROOT=$CARLA
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla/dist/carla-0.9.14-py2.7-linux-x86_64.egg:$CARLA_ROOT/PythonAPI/carla:$ROS2/install
+
+ros-init-opt
+ros-init-local
+```
+
+- Check `CARLA_VERSION` file in `~/carla-ros-bridge/install/carla_ros_bridge/lib/python3.8/site-packages/carla_ros_bridge`. If the version is different with your CARLA, just change as your carla. (0.9.14 in case of this tutorial)
