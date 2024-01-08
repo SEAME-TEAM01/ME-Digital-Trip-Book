@@ -7,3 +7,7 @@ DriveScore TripBook: Enhancing Your Driving Experience through Data-Driven Insig
 > ...
 
 [Subject](/docs/subject.en.md)
+
+# Installation
+
+Please follow this page. [(Link)](/docs/installation.md)
