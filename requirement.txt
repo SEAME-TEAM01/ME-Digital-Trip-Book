@@ -1,2 +1,0 @@
-carla==0.9.15
-pkg_resources==0.0.0
